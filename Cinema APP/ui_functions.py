@@ -222,7 +222,7 @@ class App(QMainWindow, Ui_MainWindow):
 
     def getSalaNumber(self):
         inicial_position = 15
-        inicial_sala = 1
+        inicial_sala = 0
         for x in range(5):
             if self.position == inicial_position:
                 return inicial_sala
@@ -241,9 +241,6 @@ class App(QMainWindow, Ui_MainWindow):
         salas.removeLugar(compra)
         self.stackedWidget.setCurrentWidget(self.page)
         
-
-
-
     def delHorario(self):
         for x in range(len(self.btn)):
             self.btn[x].deleteLater()
