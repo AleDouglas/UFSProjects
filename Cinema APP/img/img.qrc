@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="filmesIMG">
+    <file>ufs_logo.png</file>
+    <file>3152202.jpg</file>
+    <file>4198735.jpg</file>
+    <file>escolha-ou-morra-poster.jpg</file>
+    <file>images_1.jpg</file>
+    <file>Sonic_the_Hedgehog_2019.jpg</file>
+    <file>images.jpg</file>
+  </qresource>
+</RCC>
