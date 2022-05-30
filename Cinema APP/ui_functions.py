@@ -131,11 +131,13 @@ class App(QMainWindow, Ui_MainWindow):
     
 
     def setHorario(self, event, index=None, position=None):
+        self.position = position
         dados = [filme.getNome(self.selectFilm), self.getSalaNumber(), self.hourSelect[index], self.dateSelect]
+        #print(dados)
         cadeiras_compradas = salas.changeLugares(dados)
         #print(cadeiras_compradas)
         self.lugarComprar = []
-        self.position = position
+        salaNumber = self.getSalaNumber() #Pegando número da Sala
         self.selectLugares = []
         self.buttLugares = [
             self.a1, self.a2, self.a3, self.a4,
@@ -189,8 +191,8 @@ class App(QMainWindow, Ui_MainWindow):
         info_ingresso = f"INFORMAÇÕES DO INGRESSO\nQuantidade de lugares selecionados: {qtd_lugares}\nNúmero da Sala: 0{dados_info[1] + 1}\nData do filme: {datas[dados_info[3]]}\nHorário do filme: {dados_info[2]}\n"
         salas.lugares(dados_info)
         #print(salas.getLugaresComprados())
-        for i in lugares:
-            i.setChecked(False)
+        #for i in lugares:
+            #i.setChecked(False)
         self.label_14.setText(info_ingresso)
         self.filme_img_2.setPixmap(QtGui.QPixmap(filme.getPath(self.selectFilm))) #Pegando Path da imagem
         self.filme_name_2.setText(filme.getNome(self.selectFilm)) #Exibindo nome
