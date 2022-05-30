@@ -6,7 +6,7 @@ import sys
 from filmes import *
 import functools
 from salas import *
-
+from cliente import *
 
 class App(QMainWindow, Ui_MainWindow):
     def __init__(self, parent = None) -> None:
@@ -162,12 +162,11 @@ class App(QMainWindow, Ui_MainWindow):
 
     def setLugar(self, event, id_lugar=None, hourSelect = None,butt = None, hideButton = None):
         self.hideButton = hideButton
-        if self.hideButton == True:
-            self.pushButton_6.show() #Mostrando botões
+        if self.hideButton == True and butt.text() != 'INDISPONÍVEL':
+            self.pushButton_6.show() #Mostrando botão de CONTINUAR
         stop_if = False
         if butt.isChecked() and butt.text() != 'INDISPONÍVEL':
             butt.setChecked(False)
-            print(butt.isChecked())
             self.selectLugares.remove(butt.objectName())
             self.lugarComprar.remove(butt)
             stop_if = True
@@ -176,7 +175,6 @@ class App(QMainWindow, Ui_MainWindow):
                 self.hideButton = False
         if butt.isChecked() == False and butt.text() != 'INDISPONÍVEL' and stop_if == False:
             butt.setChecked(True)
-            print(butt.isChecked())
             self.selectLugares.append(butt.objectName())
             self.lugarComprar.append(butt)
         salaNumber = self.getSalaNumber() #Pegando número da Sala
@@ -201,18 +199,24 @@ class App(QMainWindow, Ui_MainWindow):
         self.pushButton_9.mousePressEvent = functools.partial(self.cancelarCompra, compra = dados_info)
 
     def finishBuy(self, event, dados = None):
-        if len(self.lineEdit.text()) > 0 and len(self.lineEdit_2.text()) == 9:
-            cliente = f'{self.lineEdit.text()}, ' + f'{self.lineEdit_2.text()}'
-            self.cliente.append(cliente)
-            msg = QMessageBox()
-            msg.setWindowTitle("Ingresso Comprado Com Sucesso")
-            msg.setText("Compra feita com sucesso")
-            msg.setIcon(QMessageBox.Information)
-            msg.setStandardButtons(QMessageBox.Ok)
-            x = msg.exec_()
-            self.stackedWidget.setCurrentWidget(self.page)
-        else:
+        try:
+            number = int(self.lineEdit_2.text())
+            if len(self.lineEdit.text()) > 0 and len(self.lineEdit_2.text()) >= 9 and len(self.lineEdit_2.text()) <= 11:
+                cliente = f'{self.lineEdit.text()} | {number} | {dados}'
+                cliente_geral.adicionarCliente(cliente)
+                msg = QMessageBox()
+                msg.setWindowTitle("Ingresso Comprado Com Sucesso")
+                msg.setText("Compra feita com sucesso")
+                msg.setIcon(QMessageBox.Information)
+                msg.setStandardButtons(QMessageBox.Ok)
+                x = msg.exec_()
+                self.pushButton_6.hide()
+                self.stackedWidget.setCurrentWidget(self.page)
+            else:
+                self.errorPopUp("Verifique se os dados inseridos estão corretos")
+        except:
             self.errorPopUp("Verifique se os dados inseridos estão corretos")
+
 
     def errorPopUp(self, msg_insert):
         msg = QMessageBox()
