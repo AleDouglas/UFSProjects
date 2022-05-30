@@ -66,6 +66,14 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 734, 1200))
         self.scrollAreaWidgetContents.setMinimumSize(QtCore.QSize(0, 1200))
+        self.scrollAreaWidgetContents.setStyleSheet("QLabel\n"
+"{\n"
+"border: 3px solid black;\n"
+"}\n"
+"QLabel:hover\n"
+"{\n"
+" border: 3px solid yellow;\n"
+"}")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.cartazLabel = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.cartazLabel.setGeometry(QtCore.QRect(240, 10, 241, 101))
@@ -75,95 +83,68 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.cartazLabel.setFont(font)
-        self.cartazLabel.setStyleSheet("")
+        self.cartazLabel.setStyleSheet("QLabel\n"
+"{\n"
+"border:0px solid black;\n"
+"}\n"
+"QLabel:hover\n"
+"{\n"
+" border: 0px solid yellow;\n"
+"}")
         self.cartazLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.cartazLabel.setObjectName("cartazLabel")
         self.filme_1 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.filme_1.setGeometry(QtCore.QRect(15, 130, 201, 281))
-        self.filme_1.setStyleSheet("QLabel\n"
-"{\n"
-"border: 3px solid black;\n"
-"}\n"
-"QLabel:hover\n"
-"{\n"
-" border: 3px solid yellow;\n"
-"}")
+        self.filme_1.setStyleSheet("")
         self.filme_1.setText("")
         self.filme_1.setPixmap(QtGui.QPixmap(":/filmesIMG/images.jpg"))
         self.filme_1.setScaledContents(True)
         self.filme_1.setObjectName("filme_1")
         self.filme_2 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.filme_2.setGeometry(QtCore.QRect(265, 130, 201, 281))
-        self.filme_2.setStyleSheet("QLabel\n"
-"{\n"
-"border: 3px solid black;\n"
-"}\n"
-"QLabel:hover\n"
-"{\n"
-" border: 3px solid yellow;\n"
-"}")
+        self.filme_2.setStyleSheet("")
         self.filme_2.setText("")
         self.filme_2.setPixmap(QtGui.QPixmap(":/filmesIMG/images_1.jpg"))
         self.filme_2.setScaledContents(True)
         self.filme_2.setObjectName("filme_2")
         self.filme_3 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.filme_3.setGeometry(QtCore.QRect(515, 130, 201, 281))
-        self.filme_3.setStyleSheet("QLabel\n"
-"{\n"
-"border: 3px solid black;\n"
-"}\n"
-"QLabel:hover\n"
-"{\n"
-" border: 3px solid yellow;\n"
-"}")
+        self.filme_3.setStyleSheet("")
         self.filme_3.setText("")
         self.filme_3.setPixmap(QtGui.QPixmap(":/filmesIMG/Sonic_the_Hedgehog_2019.jpg"))
         self.filme_3.setScaledContents(True)
         self.filme_3.setObjectName("filme_3")
         self.filme_4 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.filme_4.setGeometry(QtCore.QRect(15, 460, 201, 281))
-        self.filme_4.setStyleSheet("QLabel\n"
-"{\n"
-"border: 3px solid black;\n"
-"}\n"
-"QLabel:hover\n"
-"{\n"
-" border: 3px solid yellow;\n"
-"}")
+        self.filme_4.setStyleSheet("")
         self.filme_4.setText("")
         self.filme_4.setPixmap(QtGui.QPixmap(":/filmesIMG/3152202.jpg"))
         self.filme_4.setScaledContents(True)
         self.filme_4.setObjectName("filme_4")
         self.filme_5 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.filme_5.setGeometry(QtCore.QRect(265, 460, 201, 281))
-        self.filme_5.setStyleSheet("QLabel\n"
-"{\n"
-"border: 3px solid black;\n"
-"}\n"
-"QLabel:hover\n"
-"{\n"
-" border: 3px solid yellow;\n"
-"}")
+        self.filme_5.setStyleSheet("")
         self.filme_5.setText("")
         self.filme_5.setPixmap(QtGui.QPixmap(":/filmesIMG/4198735.jpg"))
         self.filme_5.setScaledContents(True)
         self.filme_5.setObjectName("filme_5")
         self.filme_6 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.filme_6.setGeometry(QtCore.QRect(515, 460, 201, 281))
-        self.filme_6.setStyleSheet("QLabel\n"
-"{\n"
-"border: 3px solid black;\n"
-"}\n"
-"QLabel:hover\n"
-"{\n"
-" border: 3px solid yellow;\n"
-"}")
+        self.filme_6.setStyleSheet("")
         self.filme_6.setText("")
         self.filme_6.setPixmap(QtGui.QPixmap(":/filmesIMG/escolha-ou-morra-poster.jpg"))
         self.filme_6.setScaledContents(True)
         self.filme_6.setObjectName("filme_6")
         self.label_11 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.label_11.setGeometry(QtCore.QRect(0, 90, 731, 20))
+        self.label_11.setStyleSheet("QLabel\n"
+"{\n"
+"border: 0px solid black;\n"
+"}\n"
+"QLabel:hover\n"
+"{\n"
+" border: 0px solid yellow;\n"
+"}")
         self.label_11.setObjectName("label_11")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout_3.addWidget(self.scrollArea)
@@ -904,7 +885,7 @@ class Ui_MainWindow(object):
         self.stackedWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, MainWindow): #INSERINDO TEXTO NOS OBJETOS DA APLICAÇÃO
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Cinema APP"))
         self.cartazLabel.setText(_translate("MainWindow", "EM CARTAZ"))
@@ -977,4 +958,5 @@ class Ui_MainWindow(object):
         self.filme_name_2.setText(_translate("MainWindow", "NOME DO FILME"))
         self.label_14.setText(_translate("MainWindow", "INFORMAÇÕES DO INGRESSO:\n"
 ""))
+
 
