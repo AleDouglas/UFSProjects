@@ -13,7 +13,7 @@ class Filmes:
             '<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:16pt;">DESCRIÇÃO</p>',
             '<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:16pt;">DESCRIÇÃO</p>',
             ]
-        self.__classificacao = [10,12,15]
+        #self.__classificacao = [10,12,15]
         self.__id = [0,1,2,3,4,5]
         self.__pathIMG = [
             ":/filmesIMG/images.jpg",

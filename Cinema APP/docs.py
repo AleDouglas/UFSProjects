@@ -904,7 +904,7 @@ class Ui_MainWindow(object):
         self.stackedWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, MainWindow): #INSERINDO TEXTO NOS OBJETOS DA APLICAÇÃO
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Cinema APP"))
         self.cartazLabel.setText(_translate("MainWindow", "EM CARTAZ"))

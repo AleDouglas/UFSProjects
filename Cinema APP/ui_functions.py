@@ -40,7 +40,6 @@ class App(QMainWindow, Ui_MainWindow):
         for i in range(len(self.labels)): #Pegando labels dos filmes em cartaz
             self.labels[i].mousePressEvent = functools.partial(self.getFilme, film_id=i) #Pegando qual filme foi clicado e salvando ID
         
-
     def getFilme(self, event, film_id=None):
         for i in filme.getId():
             if i == film_id:
@@ -121,7 +120,6 @@ class App(QMainWindow, Ui_MainWindow):
             p.mousePressEvent = functools.partial(self.setHorario, index=index_id, position = p.y())
             index_id += 1
         
-
     def setDate(self, event, index_page= None):
         self.dateSelect = 0
         for getButton in range(len(self.dataButtons)):
@@ -129,7 +127,6 @@ class App(QMainWindow, Ui_MainWindow):
                 self.stackedWidget_2.setCurrentWidget(self.hourPage[getButton])
                 self.dateSelect = getButton
     
-
     def setHorario(self, event, index=None, position=None):
         self.position = position
         dados = [filme.getNome(self.selectFilm), self.getSalaNumber(), self.hourSelect[index], self.dateSelect]
@@ -159,9 +156,6 @@ class App(QMainWindow, Ui_MainWindow):
         for indexLugar in range(len(self.buttLugares)):
             self.buttLugares[indexLugar].mousePressEvent = functools.partial(self.setLugar, hourSelect=self.hourSelect[index], butt=self.buttLugares[indexLugar], hideButton = True)
 
-
-
-
     def setLugar(self, event, id_lugar=None, hourSelect = None,butt = None, hideButton = None):
         self.hideButton = hideButton
         if self.hideButton == True and butt.text() != 'INDISPONÍVEL':
@@ -183,7 +177,6 @@ class App(QMainWindow, Ui_MainWindow):
         dados = [filme.getNome(self.selectFilm), salaNumber, hourSelect, self.dateSelect,self.selectLugares]
         self.pushButton_6.mousePressEvent = functools.partial(self.buy, dados_info = dados, lugares = self.lugarComprar)
         
-
     def buy(self, event, dados_info = None, lugares = None):       
         self.stackedWidget.setCurrentWidget(self.page_4)
         datas = ['31/05', '01/06', '02/06', '03/06', '04/06']
@@ -218,7 +211,6 @@ class App(QMainWindow, Ui_MainWindow):
                 self.errorPopUp("Verifique se os dados inseridos estão corretos")
         except:
             self.errorPopUp("Verifique se os dados inseridos estão corretos")
-
 
     def errorPopUp(self, msg_insert):
         msg = QMessageBox()

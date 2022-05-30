@@ -52,21 +52,6 @@ class Salas:
     def removeLugar(self, listDados):
         self.lugaresComprados.remove(listDados)
 
-    def verificarLugar(self, listDados):
-        existe = False
-        for i in range(len(self.lugaresComprados)):
-            if listDados[0] == self.lugaresComprados[i][0]: #VERIFICANDO NOME DO FILME
-                if listDados[1] == self.lugaresComprados[i][1]: #VERIFICANDO SALA
-                    if listDados[2] == self.lugaresComprados[i][2]: #VERIFICANDO HORÁRIO
-                        if listDados[3] == self.lugaresComprados[i][3]: #VERIFICANDO DIA
-                            for x in self.lugaresComprados[i][4]: #VERFICIANDO CADEIRAS
-                                for y in listDados[4]:
-                                    if x == y:
-                                        existe = True
-                                        return True
-        if existe == False:
-            return False
-
     def changeLugares(self, listDados):
         list = []
         for i in range(len(self.lugaresComprados)):
